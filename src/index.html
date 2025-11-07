@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>HDR Изображение</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>HDR Изображение</h1>
+      <p class="subtitle">Высокий динамический диапазон для максимальной детализации</p>
+    </header>
+
+    <div class="image-wrapper">
+      <div class="image-container">
+        <img 
+          src="hdr-image.jpg" 
+          alt="HDR изображение с высоким динамическим диапазоном"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      <div class="image-info">
+        <div class="info-row">
+          <span class="info-label">Формат:</span>
+          <span class="info-value">
+            <span class="badge">HDR</span>
+          </span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Цветовое пространство:</span>
+          <span class="info-value">Расширенный диапазон</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hdr-status">
+      <div class="status-header">
+        <h2 class="status-title">Информация о дисплее</h2>
+        <span id="hdr-status-badge" class="badge">Проверка...</span>
+      </div>
+      <div class="status-grid" id="display-info">
+        <!-- Информация будет добавлена через JavaScript -->
+      </div>
+    </div>
+
+    <footer>
+      <p>Оптимизировано для HDR дисплеев</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
