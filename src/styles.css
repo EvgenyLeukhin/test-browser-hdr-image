@@ -71,7 +71,7 @@ h1 {
   overflow: hidden;
 }
 
-img {
+.image-container img {
   position: absolute;
   top: 0;
   left: 0;
@@ -148,6 +148,74 @@ img {
   border: 1px solid var(--border);
 }
 
+.comparison {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 48px var(--shadow);
+}
+
+.comparison-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.comparison-description {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 720px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.comparison-item {
+  background: var(--bg-primary);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.comparison-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.comparison-caption {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.comparison-caption-title {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.comparison-caption-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.comparison-note {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 .status-header {
   display: flex;
   align-items: center;
@@ -216,6 +284,10 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .comparison {
+    padding: 1.5rem;
   }
 }
 
