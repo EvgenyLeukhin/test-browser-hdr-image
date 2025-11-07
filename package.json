@@ -1,0 +1,24 @@
+{
+  "name": "test-browser-hdr-image",
+  "version": "1.0.0",
+  "main": "package.json",
+  "scripts": {
+    "deploy": "gh-pages -d src"
+  },
+  "author": "Evgeny Leukhin",
+  "description": "Test HDR-image",
+  "homepage": "https://EvgenyLeukhin.github.io/test-browser-hdr-image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenyLeukhin/test-browser-hdr-image.git"
+  },
+  "keywords": [
+    "hdr",
+    "image",
+    "test"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
