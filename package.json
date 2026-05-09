@@ -1,9 +1,14 @@
 {
   "name": "test-browser-hdr-image",
   "version": "1.0.0",
+  "type": "module",
   "main": "package.json",
   "scripts": {
-    "deploy": "gh-pages -d src"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist",
+    "icons:ico": "node scripts/generate-favicon-ico.mjs"
   },
   "author": "Evgeny Leukhin",
   "description": "Test HDR-image",
@@ -18,7 +23,9 @@
     "test"
   ],
   "license": "MIT",
-  "dependencies": {
-    "gh-pages": "^6.3.0"
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "png-to-ico": "^2.1.8",
+    "vite": "^6.0.0"
   }
 }
