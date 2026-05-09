@@ -265,8 +265,8 @@ class HDRDetector {
       colorDepth,
       resolution,
       mediaCapabilities,
-      // HDR считается поддерживаемым, если есть хотя бы одна из проверок
-      hdrSupported: p3 || rec2020 || dynamicRange || (colorDepth.colorDepth >= 30)
+      // Без screen.colorDepth: на Windows часто 32 для обычного 8-bit SDR, это не HDR.
+      hdrSupported: p3 || rec2020 || dynamicRange
     };
 
     return this.capabilities;

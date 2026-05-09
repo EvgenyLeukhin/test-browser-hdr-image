@@ -505,6 +505,20 @@ footer {
   outline-offset: 2px;
 }
 
+.language-button-flag {
+  display: inline-flex;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.language-button-flag svg {
+  display: block;
+  width: 1.25rem;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
 /* Адаптивные стили */
 @media (max-width: 768px) {
   body {
