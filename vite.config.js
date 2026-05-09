@@ -43,7 +43,8 @@ function ogImageFromBundle() {
 
 export default defineConfig(({ command }) => ({
   root: 'src',
-  base: command === 'serve' ? '/' : repoBase,
+  // '/' в dev; './' в production — пути к CSS/JS относительные, чтобы `vite preview` с http://localhost:4173/ и GitHub Pages работали без префикса в URL вкладки
+  base: command === 'serve' ? '/' : './',
   publicDir: path.resolve(__dirname, 'public'),
   plugins: [ogImageFromBundle()],
   build: {
