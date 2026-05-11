@@ -41,12 +41,42 @@ function ogImageFromBundle() {
   };
 }
 
+function rootReadme() {
+  const readmeFsPath = path.resolve(__dirname, 'README.md');
+
+  return {
+    name: 'root-readme',
+    configureServer(server) {
+      server.middlewares.use('/README.md', async (_req, res) => {
+        try {
+          const md = await fs.readFile(readmeFsPath, 'utf8');
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+          res.end(md);
+        } catch {
+          res.statusCode = 404;
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+          res.end('README.md not found');
+        }
+      });
+    },
+    async closeBundle() {
+      const distReadme = path.resolve(__dirname, 'dist', 'README.md');
+      try {
+        await fs.copyFile(readmeFsPath, distReadme);
+      } catch {
+        // ignore
+      }
+    },
+  };
+}
+
 export default defineConfig(({ command }) => ({
   root: 'src',
   // '/' в dev; './' в production — пути к CSS/JS относительные, чтобы `vite preview` с http://localhost:4173/ и GitHub Pages работали без префикса в URL вкладки
   base: command === 'serve' ? '/' : './',
   publicDir: path.resolve(__dirname, 'public'),
-  plugins: [ogImageFromBundle()],
+  plugins: [rootReadme(), ogImageFromBundle()],
   build: {
     outDir: '../dist',
     emptyOutDir: true,

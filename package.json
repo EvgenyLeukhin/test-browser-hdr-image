@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "serve": "vite preview",
+    "preview:readme": "npm run build && vite preview --open /reaame.html",
     "deploy": "npm run build && gh-pages -d dist",
     "icons:ico": "node scripts/generate-favicon-ico.mjs"
   },
